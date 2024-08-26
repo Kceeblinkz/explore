@@ -17,7 +17,7 @@ jobs:
         with:
           bundler-cache: true
 
-      - name: Test collection with autofix and commit changes
+      - name: Don't test collection with autofix
         uses: technote-space/create-pr-action@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -29,4 +29,4 @@ jobs:
           COMMIT_NAME: 'GitHub Actions'
           COMMIT_EMAIL: 'actions@github.com'
           PR_BRANCH_NAME: 'update-collections-${PR_ID}'
-          PR_TITLE: '✨ Autofixing renamed/removed collection items ✨'
+          PR_TITLE: /keep collection items ✨'
